@@ -1,5 +1,4 @@
 // 485. Max Consecutive Ones
-package LeetCode;
 
 public class ID485 {
 

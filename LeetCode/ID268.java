@@ -1,5 +1,4 @@
 // 268. Missing Number
-package LeetCode;
 
 public class ID268 {
 

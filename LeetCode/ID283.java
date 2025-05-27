@@ -1,7 +1,5 @@
 // 283. Move Zeroes
 
-package LeetCode;
-
 import java.util.Arrays;
 
 public class ID283 {
