@@ -5,7 +5,9 @@ import java.util.Arrays;
 public class ID1299 {
   public static void main(String[] args) {
     int[] arr = { 17, 18, 5, 4, 6, 1 };
-    System.out.println(Arrays.toString(replaceElements1(arr)));
+    // [18,6,6,6,1,-1]
+    // System.out.println(Arrays.toString(replaceElements1(arr)));
+    System.out.println(Arrays.toString(replaceElements2(arr)));
 
   }
 
@@ -30,4 +32,27 @@ public class ID1299 {
     arr[arr.length - 1] = -1;
     return arr;
   }
+
+  // Optimized Approach
+  static int[] replaceElements2(int[] arr) {
+    if (arr.length == 1) {
+      arr[0] = -1;
+      return arr;
+    }
+
+    int max = arr[arr.length - 1];
+    arr[arr.length - 1] = -1; // Last element is always -1
+    for (int i = arr.length - 2; i >= 0; i--) {
+      if (arr[i] > max) {
+        int temp = arr[i];
+        arr[i] = max;
+        max = temp;
+      } else {
+        arr[i] = max;
+      }
+    }
+
+    return arr;
+  }
+
 }
