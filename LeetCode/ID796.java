@@ -6,10 +6,14 @@ public class ID796 {
     ID796 solution = new ID796();
     String s = "abcde";
     String goal = "cdeab";
-    boolean result = solution.rotateString(s, goal);
+    // boolean result = solution.rotateString(s, goal);
+    boolean result = solution.rotateStringConcat(s, goal);
     System.out.println("Can rotate: " + result); // Expected output: true
   }
 
+  // Approach 1: Using KMP Algorithm
+  // Time Complexity: O(n)
+  // Space Complexity: O(n)
   public boolean rotateString(String s, String goal) {
     int n = goal.length();
     if (s.length() != n) {
@@ -61,4 +65,17 @@ public class ID796 {
       }
     }
   }
+
+  // Approach 2: Using String Concatenation
+  // Time Complexity: O(n)
+  // Space Complexity: O(n)
+  // This approach is less efficient than KMP but simpler to implement.
+  public boolean rotateStringConcat(String s, String goal) {
+    if (s.length() != goal.length()) {
+      return false;
+    }
+    String concatenated = s + s;
+    return concatenated.contains(goal);
+  }
+
 }
